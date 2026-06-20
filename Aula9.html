@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 9 - Exercícios</title>
+</head>
+<body>
+    <p>Esse é um parágrafo</p>
+    <button id="botao">Mudar parágrafo</button>
+    <br>
+    <br>
+    <input type="text">
+    <p>Texto digitado: <span id="texto"></span></p>
+    <br>
+
+    <img id="bordaImg" src="https://images.unsplash.com/photo-1777483956355-8f03576dba2e?q=80&w=1190&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="border: 5px solid transparent; height: 150px;">
+
+
+    <script>
+        // 1. Faça um botão que, ao ser clicado, mude o texto de um parágrafo.
+        document.querySelector("#botao").addEventListener("click", function() { 
+            document.querySelector("p").textContent = "Esse texto foi modificado"; 
+        });
+
+        // 2. Capture o texto digitado em um input e mostre em tempo real abaixo dele.
+        document.querySelector("input").addEventListener("input", function(e) {
+            document.querySelector("#texto").textContent = e.target.value; 
+        });
+
+        // 3. Ao passar o mouse sobre uma imagem, troque sua borda.
+        let bordaImg = document.querySelector("#bordaImg");
+        bordaImg.addEventListener("mouseover", function() {
+            bordaImg.style.border = "5px solid blue";
+        });
+        bordaImg.addEventListener("mouseout", function() {
+            bordaImg.style.border = "5px solid transparent";
+        });
+    </script>
+
+</body>
+</html>
